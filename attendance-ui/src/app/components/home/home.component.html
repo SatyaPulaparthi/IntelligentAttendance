@@ -1,0 +1,51 @@
+<mat-toolbar>
+    <mat-icon>local_fire_department</mat-icon>
+    <span class="space-200">Smart Attendance</span>
+    <button mat-icon-button class="space-80" (click)="viewAttendanceRecords()">
+        Track Student
+    </button>
+    <button mat-icon-button class="space-80" (click)="registerNewStudent()">
+        Register Student
+    </button>
+</mat-toolbar>
+
+<h2 style="text-align: center; margin-top: 10px">Attendance Details</h2>
+<div style="display: flex; align-items: center; padding: 0 8% 8% 8%">
+    <mat-table [dataSource]="datasource" style="width: 50%" color="accent">
+        <!-- Student Name Column -->
+        <ng-container matColumnDef="student_name">
+            <mat-header-cell *matHeaderCellDef> Student Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.student_name }} </mat-cell>
+        </ng-container>
+
+        <!-- Student ID Column -->
+        <ng-container matColumnDef="student_id">
+            <mat-header-cell *matHeaderCellDef> Student ID </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.student_id }} </mat-cell>
+        </ng-container>
+
+        <!-- Has Attended Column -->
+        <ng-container matColumnDef="has_attended">
+            <mat-header-cell *matHeaderCellDef> Has Attended </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span *ngIf="element.has_attended; else notAttended"> Yes </span>
+                <ng-template #notAttended> No </ng-template>
+            </mat-cell>
+        </ng-container>
+
+        <!-- Table Row -->
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+
+    <div style="width: 300px; height: 300px;">
+        <ngx-charts-pie-chart
+                [results]="pieChartData"
+                [view]="view"
+                [gradient]="gradient"
+                [legend]="true"
+                [labelFormatting]="labelFormatting">
+        </ngx-charts-pie-chart>
+    </div>
+</div>
+

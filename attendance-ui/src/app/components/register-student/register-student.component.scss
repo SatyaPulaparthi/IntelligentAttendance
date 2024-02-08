@@ -1,0 +1,27 @@
+.container {
+  margin: 50px;
+  padding: 20px;
+  background-color: purple;
+  border-radius: 10px;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.web-cam {
+  margin: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+mat-form-field {
+  width: 45%;
+}

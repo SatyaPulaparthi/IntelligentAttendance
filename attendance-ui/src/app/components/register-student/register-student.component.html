@@ -1,0 +1,29 @@
+<mat-toolbar>
+    <mat-icon>local_fire_department</mat-icon>
+    <span>Smart Attendance</span>
+</mat-toolbar>
+<div class="mat-elevation-z5 container">
+    <form [formGroup]="studentForm" (ngSubmit)="submit()" class="flex">
+        <div class="flex-row">
+        <mat-form-field>
+            <mat-label>Student Name</mat-label>
+            <input matInput placeholder="Student Name" formControlName="name" />
+            <mat-error *ngIf="name?.errors?.['required']">
+                Name Required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Student ID</mat-label>
+            <input matInput placeholder="Student ID" formControlName="id" />
+            <mat-error *ngIf="id?.errors?.['required']">
+                ID required
+            </mat-error>
+        </mat-form-field>
+        </div>
+
+        <webcam class="web-cam"></webcam>
+        <div style="margin: auto">
+            <button type="submit" mat-raised-button color="accent">Register Student</button>
+        </div>
+    </form>
+</div>

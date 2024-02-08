@@ -1,0 +1,28 @@
+<mat-toolbar>
+    <mat-icon>local_fire_department</mat-icon>
+    <span>Smart Attendance</span>
+</mat-toolbar>
+<div class="mat-elevation-z5 container">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()" class="flex">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email address" formControlName="email" />
+            <mat-error *ngIf="email?.errors?.['email']">
+               Invalid email
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['required']">
+                Email Required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" formControlName="password" />
+            <mat-error *ngIf="password?.errors?.['required']">
+                Password required
+            </mat-error>
+        </mat-form-field>
+        <div style="margin: auto">
+            <button type="submit" mat-raised-button color="accent">Login</button>
+        </div>
+    </form>
+</div>
