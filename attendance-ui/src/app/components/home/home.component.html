@@ -7,9 +7,13 @@
     <button mat-icon-button class="space-80" (click)="registerNewStudent()">
         Register Student
     </button>
+    <button mat-icon-button class="space-80" (click)="logout()">
+        Logout
+    </button>
 </mat-toolbar>
 
 <h2 style="text-align: center; margin-top: 10px">Attendance Details</h2>
+<button mat-icon-button (click)="exportToCSV()" style="text-align: center; width: 100%">Export to CSV</button>
 <div style="display: flex; align-items: center; padding: 0 8% 8% 8%">
     <mat-table [dataSource]="datasource" style="width: 50%" color="accent">
         <!-- Student Name Column -->
