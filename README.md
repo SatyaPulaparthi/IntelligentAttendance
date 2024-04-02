@@ -18,6 +18,6 @@ This app helps tracks attendance via face recognition. It visualizes the student
 * Used for storing attendance information in the nosql format
 
 ### Backend:
-* Built using django rest and helps with face recognition
-* (PENDING) It stores the registered student images and uses them for facial recognition when tracking 
+* Built using node js and helps with face recognition
+* Follow instructions from https://www.npmjs.com/package/face-recognition for setup
 

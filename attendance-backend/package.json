@@ -6,10 +6,16 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@tensorflow/tfjs-node": "^4.17.0",
+    "canvas": "^2.11.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-fileupload": "^1.5.0",
+    "face-api.js": "^0.22.2",
     "http-errors": "~1.6.3",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.4",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11"
   }
