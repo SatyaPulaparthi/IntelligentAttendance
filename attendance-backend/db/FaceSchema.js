@@ -1,10 +1,14 @@
 var mongoose = require('mongoose');
 
 const faceSchema = new mongoose.Schema({
-    label: {
+    id: {
         type: String,
         required: true,
         unique: true,
+    },
+    name: {
+        type: String,
+        required: true
     },
     description: {
         type: Object,

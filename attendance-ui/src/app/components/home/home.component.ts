@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MOCK_STUDENTS_DATA } from '../../mockdata';
 import { AuthService } from '../../services/auth/auth.service';
+import { HttpClient } from '@angular/common/http';
+import { AttendanceService } from 'src/app/services/attendance/attendance.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent{
   displayedColumns: string[] = ['student_name', 'student_id', 'has_attended'];
-
-  constructor(private router: Router, private authService: AuthService) { }
+  students = [];
+  constructor(private router: Router, private authService: AuthService, 
+    private attendanceService: AttendanceService) { }
 
   registerNewStudent() {
     this.router.navigate(["register-student"]);
@@ -22,7 +25,7 @@ export class HomeComponent {
   }
 
   get datasource() {
-    return MOCK_STUDENTS_DATA.attendance;
+    return this.attendanceService.data;
   }
 
   pieChartData: any[] = [

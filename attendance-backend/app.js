@@ -8,11 +8,14 @@ const mongoose = require('mongoose');
 var { Canvas, Image } = require('canvas')
 var fileUpload = require('express-fileupload')
 faceapi.env.monkeyPatch({Canvas, Image})
+var cors = require('cors')
+
 
 
 var indexRouter = require('./routes/index');
 
 var app = express();
+app.use(cors())
 app.use(
   fileUpload({
     useTempFiles: true

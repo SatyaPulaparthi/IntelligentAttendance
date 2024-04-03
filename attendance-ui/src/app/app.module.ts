@@ -21,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TrackStudentComponent } from './components/track-student/track-student.component';
 import { MatTableModule } from '@angular/material/table';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         MatButtonModule,
         WebcamModule,
         MatTableModule,
-        NgxChartsModule
+        NgxChartsModule,
+        HttpClientModule
     ],
   providers: [
       {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}

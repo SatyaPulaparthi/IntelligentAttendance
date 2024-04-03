@@ -13,6 +13,7 @@ export class RegisterStudentComponent implements OnInit {
   studentForm = this.fb.group({
     name: ['', [Validators.required]],
     id: ['', Validators.required],
+    image: ['', Validators.required]
   });
 
   constructor(
