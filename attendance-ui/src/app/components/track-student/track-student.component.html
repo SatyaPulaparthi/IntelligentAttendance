@@ -3,10 +3,11 @@
     <span>Smart Attendance</span>
 </mat-toolbar>
 <div class="mat-elevation-z5 container">
-    <form class="flex">
-        <webcam class="web-cam"></webcam>
+    <div class="flex" (ngSubmit)="submit()">
+        <webcam class="web-cam" [trigger]="invokeObservable"
+        (imageCapture)="captureImg($event)"></webcam>
         <div style="margin: auto">
             <button (click)="submit()" mat-raised-button color="accent">Track Student</button>
         </div>
-    </form>
+    </div>
 </div>

@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post("/create-face", async (req, res) => {
+  console.log(req.body)
   const face = req.files.face.tempFilePath
   const name = req.body.name
   const id = req.body.id

@@ -21,7 +21,8 @@
         </mat-form-field>
         </div>
 
-        <webcam class="web-cam"></webcam>
+        <webcam class="web-cam" [trigger]="invokeObservable"
+        (imageCapture)="captureImg($event)"></webcam>
         <div style="margin: auto">
             <button type="submit" mat-raised-button color="accent">Register Student</button>
         </div>
